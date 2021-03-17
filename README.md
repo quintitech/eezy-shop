@@ -23,6 +23,14 @@ yarn rw dev
 Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`.
 
 ## TODO
-- [ ] Test deployment
-- [ ] Check SEO compatability
-- [ ] etc.
+
+- [ ] Deployment
+- [ ] SEO compatability (head meta tags)
+- [ ] Auth concept w/ roles, permissions, pw reset, signup, etc.
+- [ ] Basic data schema (products, etc.)
+- [ ] Basic site structure (home, products, shopping card, checkout, etc.)
+- [ ] Payment provider integration (stripe, etc.)
+- [ ] i18n support
+- [ ] Material ui (dark/light, themes, ltr/rtl support)
+- [ ] Unit & integration tests
+- [ ] Auto-deployment
