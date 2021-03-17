@@ -1,0 +1,96 @@
+datasource DS {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = "native"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum Permission {
+  FULL
+  DASHBOARD
+  // ORDERS
+  // CUSTOMERS
+  // MARKETING
+  // PRODUCTS
+  // GIFT_CARDS
+  // PAGES
+  // LINKS
+  // THEMES
+  // APPLICATIONS
+  // PREFERENCES
+  // REPORTS
+}
+
+model User {
+  id                   Int          @id @default(autoincrement())
+  email                String       @unique
+  name                 String?
+  bio                  String?
+  locale               String
+  role                 Role         @default(USER)
+  permissions          Permission[]
+  phone                String?
+  receiveAnnouncements Boolean
+}
+
+model Order {
+  id Int @id @default(autoincrement())
+}
+
+model GiftCard {
+  id Int @id @default(autoincrement())
+}
+
+model Customer {
+  id Int @id @default(autoincrement())
+}
+
+model CustomerAddress {
+  id            Int     @id @default(autoincrement())
+  isDefault     Boolean
+  name          String?
+  secondaryName String?
+  company       String?
+  address1      String
+  address2      String?
+  city          String
+  country       String
+  countryCode   String
+  phone         String
+  province      String?
+  provinceCode  String?
+  zip           String
+}
+
+model Product {
+  id Int @id @default(autoincrement())
+}
+
+model ProductVariant {
+  id Int @id @default(autoincrement())
+}
+
+model InventoryItem {
+  id Int @id @default(autoincrement())
+}
+
+model InventoryLevel {
+  id Int @id @default(autoincrement())
+}
+
+model Location {
+  id Int @id @default(autoincrement())
+}
+
+model Tag {
+  id   Int    @id @default(autoincrement())
+  name String
+}
