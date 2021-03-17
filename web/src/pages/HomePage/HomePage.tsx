@@ -1,3 +1,5 @@
+import { NavLink, routes } from '@redwoodjs/router'
+
 export default () => (
   <main>
     <style
@@ -39,6 +41,13 @@ export default () => (
     <section>
       <h1>
         <span>Hello World!</span>
+        <NavLink
+          className="link"
+          activeClassName="activeLink"
+          to={routes.admin()}
+        >
+          Admin
+        </NavLink>
       </h1>
     </section>
   </main>

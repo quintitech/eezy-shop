@@ -13,30 +13,24 @@ enum Role {
   ADMIN
 }
 
-enum Permission {
+enum AdminPermission {
   FULL
   DASHBOARD
-  // ORDERS
-  // CUSTOMERS
-  // MARKETING
-  // PRODUCTS
-  // GIFT_CARDS
-  // PAGES
-  // LINKS
-  // THEMES
-  // APPLICATIONS
-  // PREFERENCES
-  // REPORTS
+  ORDERS
+  CUSTOMERS
+  PRODUCTS
+  GIFT_CARDS
+  INVENTORY
 }
 
 model User {
-  id                   Int          @id @default(autoincrement())
-  email                String       @unique
+  id                   Int               @id @default(autoincrement())
+  email                String            @unique
   name                 String?
   bio                  String?
   locale               String
-  role                 Role         @default(USER)
-  permissions          Permission[]
+  role                 Role              @default(USER)
+  adminPermissions     AdminPermission[]
   phone                String?
   receiveAnnouncements Boolean
 }
@@ -87,7 +81,16 @@ model InventoryLevel {
 }
 
 model Location {
-  id Int @id @default(autoincrement())
+  id           Int     @id @default(autoincrement())
+  address1     String
+  address2     String?
+  city         String
+  country      String
+  countryCode  String
+  phone        String
+  province     String?
+  provinceCode String?
+  zip          String
 }
 
 model Tag {

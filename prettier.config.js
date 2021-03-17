@@ -8,7 +8,7 @@ module.exports = {
   arrowParens: 'always',
   overrides: [
     {
-      files: 'Routes.js',
+      files: 'Routes.tsx',
       options: {
         printWidth: 200,
       },

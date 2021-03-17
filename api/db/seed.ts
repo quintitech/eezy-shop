@@ -36,7 +36,7 @@ async function main() {
     }
   */
 
-  console.info('No data to seed. See api/db/seed.js for info.')
+  console.info('No data to seed. See api/db/seed.ts for info.')
 }
 
 main()
